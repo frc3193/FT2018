@@ -30,7 +30,7 @@ void IntakeForward::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void IntakeForward::Execute() { //TODO: might need to reverse
 	Robot::intake->left->Set(1.0);
-	Robot::intake->right->Set(1.0);
+	Robot::intake->right->Set(-1.0);
 }
 
 // Make this return true when this Command no longer needs to run execute()

@@ -24,7 +24,7 @@ private:
 	// It's desirable that everything possible is private except
 	// for methods that implement subsystem capabilities
 
-public: //TODO: CTRL + D  Clears a line!
+public:
 	Chassis();
 	void InitDefaultCommand() override;
 	void Periodic() override;

@@ -23,7 +23,12 @@ RampDeploy::RampDeploy(): frc::Command() {
 
 // Called just before this Command runs the first time
 void RampDeploy::Initialize() {
-
+	if (Robot::ramp->deployer->Get() == frc::DoubleSolenoid::Value::kForward) {
+		Robot::ramp->deployer->Set(frc::DoubleSolenoid::Value::kReverse);
+	}
+	else {
+		Robot::ramp->deployer->Set(frc::DoubleSolenoid::Value::kForward);
+	}
 }
 
 // Called repeatedly when this Command is scheduled to run
@@ -33,7 +38,7 @@ void RampDeploy::Execute() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool RampDeploy::IsFinished() {
-    return false;
+    return true;
 }
 
 // Called once after isFinished returns true
