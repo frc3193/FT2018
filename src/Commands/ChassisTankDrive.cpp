@@ -36,11 +36,7 @@ void ChassisTankDrive::Execute() {
 	Robot::chassis->robotDrive->TankDrive(Robot::oi->getdriver()->GetRawAxis(leftYAxis),
 										  Robot::oi->getdriver()->GetRawAxis(rightYAxis));
 	SmartDashboard::PutNumber("Rotation in degrees", Robot::chassis->driveEncoder->GetDistance());
-	SmartDashboard::PutNumber("Analog AccumCount: ", RobotMap::chassisAnalogEncoder->GetAccumulatorCount());
-	SmartDashboard::PutNumber("Analog AccumVal: ", RobotMap::chassisAnalogEncoder->GetAccumulatorValue());
-	SmartDashboard::PutNumber("Analog Voltage: ", RobotMap::chassisAnalogEncoder->GetVoltage());
-
-
+	SmartDashboard::PutNumber("GyroAngle", Robot::chassis->gyro->GetAngle());
 }
 
 // Make this return true when this Command no longer needs to run execute()

@@ -34,6 +34,7 @@ void AutoTimedDrive::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run currentAngle * kP_ang)
 void AutoTimedDrive::Execute() {
+	currentAngle = Robot::chassis->gyro->GetAngle();
 	Robot::chassis->robotDrive->Drive(-0.2, currentAngle*kP_ang*-1);
 }
 
