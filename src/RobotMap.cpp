@@ -81,7 +81,7 @@ void RobotMap::init() {
     lw->AddSensor("Chassis", "driveEncoder", chassisdriveEncoder);
     chassisdriveEncoder->SetDistancePerPulse(1.0);
     chassisdriveEncoder->SetPIDSourceType(frc::PIDSourceType::kRate);
-    chassisshifter.reset(new frc::DoubleSolenoid(0, 6, 7));
+    chassisshifter.reset(new frc::DoubleSolenoid(0, 0, 1));
     lw->AddActuator("Chassis", "shifter", chassisshifter);
     
     elevatorlift.reset(new frc::VictorSP(4));
@@ -115,7 +115,7 @@ void RobotMap::init() {
     rampright.reset(new frc::DoubleSolenoid(0, 4, 5));
     lw->AddActuator("Ramp", "right", rampright);
     
-    rampdeployer.reset(new frc::DoubleSolenoid(0, 0, 1));
+    rampdeployer.reset(new frc::DoubleSolenoid(0, 6, 7));
     lw->AddActuator("Ramp", "deployer", rampdeployer);
 
 
