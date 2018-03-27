@@ -27,7 +27,7 @@ AutoLeft::AutoLeft() {
 	while (goalPos == ""){
 		goalPos = frc::DriverStation::GetInstance().GetGameSpecificMessage();
 	}
-		if(goalPos[0] == 'R'){
+		if(goalPos[0] == 'L'){
 			// switch
 			AddSequential(new AutoDrive(168, true, 5)); // move to center of the scale
 			AddSequential(new AutoTurn(90, false, 3)); // turn to face it
@@ -37,12 +37,12 @@ AutoLeft::AutoLeft() {
 			AddSequential(new AutoIntakeReverse(2));
 		}
 
-		else if(goalPos[1] == 'R'){
+		else if(goalPos[1] == 'L'){
 			// scale
 			AddSequential(new AutoDrive(324, true, 6)); // move to center of the scale
 			AddSequential(new AutoTurn(90, false, 3)); // turn to face it
 			AddSequential(new IntakeOpen()); // lower the intake
-			AddSequential(new ElevatorUP());
+			AddSequential(new TimedElevatorUP(1.5));
 			AddSequential(new AutoDrive(42, true, 2));
 			AddSequential(new AutoIntakeReverse(2));
 		}

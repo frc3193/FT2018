@@ -37,12 +37,12 @@ AutoRight::AutoRight() {
 			AddSequential(new AutoIntakeReverse(2));
 		}
 
-		else if(goalPos[1] == 'L'){
+		else if(goalPos[1] == 'R'){
 			// scale
 			AddSequential(new AutoDrive(324, true, 6)); // move to center of the scale
 			AddSequential(new AutoTurn(90, true, 3)); // turn to face it
 			AddSequential(new IntakeOpen()); // lower the intake maybe this OPENS the intake? I mean, if I had to guess...
-			AddSequential(new ElevatorUP()); // I'm pretty sure that the elevator is the long thing, but I still don't know.
+			AddSequential(new TimedElevatorUP(1.5)); // I'm pretty sure that the elevator is the long thing, but I still don't know.
 			AddSequential(new AutoDrive(42, true, 2)); // get right up against the scale, overshooting is good cause the bot might need to go up a slope, from what i can get from the picture.
 			AddSequential(new AutoIntakeReverse(2));
 		}

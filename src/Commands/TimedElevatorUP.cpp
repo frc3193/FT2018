@@ -25,7 +25,7 @@ TimedElevatorUP::TimedElevatorUP(double timeout): frc::Command() {
 
 // Called just before this Command runs the first time
 void TimedElevatorUP::Initialize() {
-	SetTimeout(mTimeout);
+	SetTimeout(mTimeout); // 1 SECOND IS ~14 INCHES | 2 IS ~27.5 INCHES | 1.5 is close enough
 }
 
 // Called repeatedly when this Command is scheduled to run
